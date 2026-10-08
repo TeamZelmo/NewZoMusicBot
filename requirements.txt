@@ -1,0 +1,8 @@
+# NOTE: install "py-tgcalls" (hyphen). The PyPI name "pytgcalls" is an old, unrelated project.
+# PyrogramMod installs the module name "pyrogram" - never install original Pyrogram/Kurigram alongside it.
+PyrogramMod==2.4.1
+TgCrypto>=1.2.5
+py-tgcalls==3.0.0
+ntgcalls==3.0.2
+yt-dlp[default]
+python-dotenv>=1.0

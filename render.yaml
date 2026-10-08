@@ -1,0 +1,33 @@
+# Render Blueprint: Background Worker (no HTTP port needed).
+# A persistent disk requires a paid instance type. Secrets are entered in the dashboard (sync: false).
+services:
+  - type: worker
+    name: telegram-music-bot
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    disk:
+      name: bot-data
+      mountPath: /var/data
+      sizeGB: 5
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: ASSISTANT_SESSION
+        sync: false
+      - key: GROUP_ID
+        sync: false
+      - key: STORAGE_CHANNEL_ID
+        sync: false
+      - key: COOKIES_PATH
+        value: /etc/secrets/cookies.txt
+      - key: DOWNLOAD_DIR
+        value: /var/data/downloads
+      - key: CACHE_SCAN_LIMIT
+        value: "500"
+      - key: LOG_LEVEL
+        value: INFO
